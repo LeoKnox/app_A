@@ -1,7 +1,8 @@
 from .models import Room
+from django.core import serializers as core_serializers
 from rest_framework import serializers
 
-class RoomSerializer(serializers.HyperLinkModelSerializer):
+class RoomSerializer(serializers.HyperLinkedModelSerializer):
     class Meta:
         model = Room
         field = (
