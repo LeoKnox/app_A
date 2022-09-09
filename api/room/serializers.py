@@ -1,9 +1,10 @@
 from .models import Room
 from rest_framework import serializers
 
-class RoomSerializer(serializers.Serializer):
+class RoomSerializer(serializers.HyperLinkModelSerializer):
     class Meta:
         model = Room
-        field = {
-            "name", "description"
-        }
+        field = (
+            "name", "description", "length", "width"
+        )
+        fields = '__all__'
