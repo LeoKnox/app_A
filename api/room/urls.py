@@ -1,10 +1,10 @@
-from django.contrib import admin
+from rest_framework import routers
+from . import views
 from django.urls import path, include
-from django.conf import settings
-from django.conf.urls.static import static
-from .views import home
+
+router = routers.SimpleRouter()
+router.register(r'', views.room_list)
 
 urlpatterns = [
-    path('', home),
-    path('category/', include('api.room.urls')),
+    path('', include(router.urls)),
 ]
