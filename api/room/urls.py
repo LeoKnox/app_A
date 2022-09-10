@@ -2,8 +2,8 @@ from rest_framework import routers
 from . import views
 from django.urls import path, include
 
-router = routers.SimpleRouter()
-router.register(r'', views.room_list)
+router = routers.DefaultRouter()
+router.register(r'', views.RoomViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
